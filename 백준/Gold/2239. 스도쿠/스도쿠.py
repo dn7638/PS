@@ -5,15 +5,12 @@ puzzle = [ list(map(int, list(sys.stdin.readline().rstrip()))) for _ in range(9)
 # 012345678
 # 9 10 ... 17
 # 18
+
 answer = False
-
-
 def btk(cnt, num):
     global answer
     if answer:
         return
-
-
 
     x, y = cnt // 9, cnt % 9
 
@@ -60,7 +57,6 @@ def btk(cnt, num):
             if puzzle[_x][_y] == i:
                 btk(cnt + 1, i)
                 puzzle[_x][_y] = i
-
 
 for i in range(1,10):
     if puzzle[0][0] == 0:
