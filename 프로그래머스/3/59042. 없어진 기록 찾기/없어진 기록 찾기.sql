@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+WITH sub_table as (
+SELECT ANIMAL_INS.ANIMAL_ID as null_id, ANIMAL_OUTS.ANIMAL_ID as id , ANIMAL_OUTS.NAME as name
+FROM ANIMAL_INS right join ANIMAL_OUTS
+ON ANIMAL_INS.ANIMAL_ID = ANIMAL_OUTS.ANIMAL_ID
+) 
+SELECT id as ANIMAL_ID, name as NAME
+FROM sub_table
+WHERE null_id is NULL
