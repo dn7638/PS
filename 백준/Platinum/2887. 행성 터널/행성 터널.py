@@ -70,51 +70,15 @@ distance = abs(z_idx[n - 2][0] - z_idx[n - 1][0])
 edges.append([i, j, distance])
 
 for i in range(1, n - 1):
-    # if abs(x_idx[i][0] - x_idx[i + 1][0]) < abs(x_idx[i][0] - x_idx[i - 1][0]):
-    #     _i, j = x_idx[i][1], x_idx[i + 1][1]
-    #     distance = abs(x_idx[i][0] - x_idx[i + 1][0])
-    #     edges.append([_i, j, distance])
-    # elif abs(x_idx[i][0] - x_idx[i + 1][0]) > abs(x_idx[i][0] - x_idx[i - 1][0]):
-    #     _i, j = x_idx[i][1], x_idx[i - 1][1]
-    #     distance = abs(x_idx[i][0] - x_idx[i - 1][0])
-    #     edges.append([_i, j, distance])
-    # else:
-    #     edges.append([x_idx[i][1], x_idx[i + 1][1], abs(x_idx[i][0] - x_idx[i + 1][0])])
-    #     edges.append([x_idx[i][1], x_idx[i - 1][1], abs(x_idx[i][0] - x_idx[i - 1][0])])
     edges.append([x_idx[i][1], x_idx[i + 1][1], abs(x_idx[i][0] - x_idx[i + 1][0])])
     edges.append([x_idx[i][1], x_idx[i - 1][1], abs(x_idx[i][0] - x_idx[i - 1][0])])
-    #
-    # if abs(y_idx[i][0] - y_idx[i + 1][0]) < abs(y_idx[i][0] - y_idx[i - 1][0]):
-    #     _i, j = y_idx[i][1], y_idx[i + 1][1]
-    #     distance = abs(y_idx[i][0] - y_idx[i + 1][0])
-    #     edges.append([_i, j, distance])
-    # elif abs(y_idx[i][0] - y_idx[i + 1][0]) > abs(y_idx[i][0] - y_idx[i - 1][0]):
-    #     _i, j = y_idx[i][1], y_idx[i - 1][1]
-    #     distance = abs(y_idx[i][0] - y_idx[i - 1][0])
-    #     edges.append([_i, j, distance])
-    # else:
-    #     edges.append([y_idx[i][1], y_idx[i + 1][1], abs(y_idx[i][0] - y_idx[i + 1][0])])
-    #     edges.append([y_idx[i][1], y_idx[i - 1][1], abs(y_idx[i][0] - y_idx[i - 1][0])])
     edges.append([y_idx[i][1], y_idx[i + 1][1], abs(y_idx[i][0] - y_idx[i + 1][0])])
     edges.append([y_idx[i][1], y_idx[i - 1][1], abs(y_idx[i][0] - y_idx[i - 1][0])])
-
-    # if abs(z_idx[i][0] - z_idx[i + 1][0]) < abs(z_idx[i][0] - z_idx[i - 1][0]):
-    #     _i, j = z_idx[i][1], z_idx[i + 1][1]
-    #     distance = abs(z_idx[i][0] - z_idx[i + 1][0])
-    #     edges.append([_i, j, distance])
-    # elif abs(z_idx[i][0] - z_idx[i + 1][0]) < abs(z_idx[i][0] - z_idx[i - 1][0]):
-    #     _i, j = z_idx[i][1], z_idx[i - 1][1]
-    #     distance = abs(z_idx[i][0] - z_idx[i - 1][0])
-    #     edges.append([_i, j, distance])
-    # else:
-    #     edges.append([z_idx[i][1], z_idx[i + 1][1], abs(z_idx[i][0] - z_idx[i + 1][0])])
-    #     edges.append([z_idx[i][1], z_idx[i - 1][1], abs(z_idx[i][0] - z_idx[i - 1][0])])
     edges.append([z_idx[i][1], z_idx[i + 1][1], abs(z_idx[i][0] - z_idx[i + 1][0])])
     edges.append([z_idx[i][1], z_idx[i - 1][1], abs(z_idx[i][0] - z_idx[i - 1][0])])
 
 edges.sort(key=lambda _x: _x[2])
 answer = 0
-
 
 for i, j, dis in edges:
     p_i, p_j = find(i), find(j)
